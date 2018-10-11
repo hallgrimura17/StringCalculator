@@ -33,3 +33,6 @@ it("should return the sum of all the numbers except for numbers higher than 1000
 it("should return the sum of the numbers with the optional delimiter", () => {
     expect(add("//;\n1;2;3")).toBe(6);
 });
+it("should return the sum of the numbers with the optional delimiter", () => {
+    expect(add("//;\n1;2;3,4,4\n3")).toBe(17);
+});
