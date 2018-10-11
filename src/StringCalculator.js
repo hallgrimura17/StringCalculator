@@ -6,7 +6,7 @@ function add()
     {
         if(arguments[i] == "")
         {
-            //do nothing
+            continue;
         }
         else if(arguments[i].includes(",") || arguments[i].includes("\n"))
         {
@@ -28,7 +28,7 @@ function add()
         }
         else if(parseInt(totalArray[i]) > 1000)
         {
-            //do nothing
+            continue;
         }
         else
         {
