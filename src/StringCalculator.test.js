@@ -6,3 +6,6 @@ it("should return zero on an empty string", () => {
 it("should return the number given", () => {
     expect(add("1")).toBe(1);
 });
+it("should return the sum of the two numbers", () => {
+    expect(add("2,3")).toBe(5);
+});
