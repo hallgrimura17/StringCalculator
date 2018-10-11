@@ -1,18 +1,23 @@
-function add(numbers)
+function add()
 {
-    if(numbers == "")
+    var total = 0;
+    for(var i = 0; i < arguments.length; i++)
     {
-        return 0;
+        if(arguments[i] == "")
+        {
+            total += 0;
+        }
+        else if(arguments[i].includes(","))
+        {
+            numberArray = arguments[i].split(",");
+            total += sum(numberArray);
+        }
+        else
+        {
+            total += parseInt(arguments[i]);
+        }
     }
-    else if(numbers.includes(","))
-    {
-        numberArray = numbers.split(",");
-        return sum(numberArray);
-    }
-    else
-    {
-        return parseInt(numbers);
-    }
+    return total;
 }
 
 function sum(numberArray)
