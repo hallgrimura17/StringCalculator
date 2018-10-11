@@ -21,3 +21,9 @@ it("should return the sum of the four arguments", () => {
 it("should return the sum of numbers with , or \\n between them", () => {
     expect(add("2\n5,7,9")).toBe(23);
 });
+test("should throw an exception, listing all negative numbers recieved as input", () => {
+    function addNegative() {
+        add("2\n5,-7,9", "1, -5");
+    }
+    expect(addNegative).toThrowError("Negatives not allowed: -7,-5");
+  });
