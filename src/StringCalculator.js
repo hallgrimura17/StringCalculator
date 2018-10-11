@@ -26,6 +26,10 @@ function add()
         {
             illegalNumbers += totalArray[i] + ",";
         }
+        else if(parseInt(totalArray[i]) > 1000)
+        {
+            //do nothing
+        }
         else
         {
             sum += parseInt(totalArray[i]);

@@ -27,3 +27,6 @@ test("should throw an exception, listing all negative numbers recieved as input"
     }
     expect(addNegative).toThrowError("Negatives not allowed: -7,-5");
   });
+it("should return return the sum of all the numbers except for numbers higher than 1000", () => {
+    expect(add("1001")).toBe(0);
+});
