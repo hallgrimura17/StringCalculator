@@ -1,27 +1,17 @@
 function add()
 {
     var total = 0;
+    var regex = new RegExp(",|\n");
     for(var i = 0; i < arguments.length; i++)
     {
         if(arguments[i] == "")
         {
             total += 0;
         }
-        else if(arguments[i].includes(","))
+        else if(arguments[i].includes(",") || arguments[i].includes("\n"))
         {
-            numberArray = arguments[i].split(",");
-            for(var j = 0; j < numberArray.length; j++)
-            {
-                if(numberArray[j].includes("\n"))
-                {
-                    var numberArray2 = numberArray[j].split("\n");
-                    total += sum(numberArray2);
-                }
-                else
-                {
-                    total += parseInt(numberArray[j]);
-                }
-            }
+            var numberArray = arguments[i].split(regex);
+            total += sum(numberArray);
         }
         else
         {
