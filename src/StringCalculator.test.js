@@ -36,3 +36,6 @@ it("should return the sum of the numbers with the optional delimiter", () => {
 it("should return the sum of the numbers with the optional delimiter", () => {
     expect(add("//;\n1;2;3,4,4\n3")).toBe(17);
 });
+it("should return the sum of the numbers with the optional delimiter halli", () => {
+    expect(add("//halli\n1halli2halli3,4,4\n3")).toBe(17);
+});
