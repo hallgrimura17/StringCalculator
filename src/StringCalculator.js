@@ -1,15 +1,22 @@
 function add()
 {
     var totalArray = [];
-    var regex = new RegExp(",|\n");
     for(var i = 0; i < arguments.length; i++)
     {
+        var regex = new RegExp(",|\n");
         if(arguments[i] == "")
         {
             continue;
         }
         else if(arguments[i].includes(",") || arguments[i].includes("\n"))
         {
+            if(arguments[i].includes("//"))
+            {
+                var numberArray2 = arguments[i].split("\n");
+                regex = numberArray2[0].substr(2) + "|,|\n";
+                arguments[i] = arguments[i].substr(regex.length - 1); //cut of the optional part off the argument
+                regex = new RegExp(numberArray2[0].substr(2) + "|,|\n") //make new regex have as delimiter
+            }
             var numberArray = arguments[i].split(regex);
             totalArray = AddArrayToArray(totalArray, numberArray);
         }
